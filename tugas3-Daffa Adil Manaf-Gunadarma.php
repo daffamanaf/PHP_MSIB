@@ -1,6 +1,9 @@
 <!doctype html>
-  <head>
-    <title>Tugas3 Daffa Adil Manaf</title>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tugas3 PHP Daffa Adil Manaf</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body>
@@ -17,18 +20,23 @@
     $m10 = ['npm' => '50419231', 'nama' => 'Adrian Juansyah', 'nil' => 68];
     $mahasiswasiswi = [$m1, $m2, $m3, $m4, $m5, $m6, $m7, $m8, $m9, $m10];
 	
+	
     $attr = ['No', 'npm', 'Nama Mahasiswa', 'Nilai', 'Grade', 'predat', 'ket'];
 
     $jmlmhs = count($mahasiswasiswi);
     $nil = array_column($mahasiswasiswi, 'nil');
-    $nil_total = array_sum($nil);
+    $total_nil = array_sum($nil);
     $nil_maks = max($nil);
     $nil_min = min($nil);
-    $rata2nil = $nil_total / $jmlmhs;
+    $ratnil = $total_nil / $jmlmhs;
 
-    $ket = ['Jumlah Mahasiswa' => $jmlmhs,'Nilai Terendah' => $nil_maks,'Nilai Tertinggi' => $nil_min,'Rata-Rata nil' => $rata2nil];
+    $ket = [
+    'Jumlah Mahasiswa' => $jmlmhs,
+	'Nilai Terendah' => $nil_maks,
+    'Nilai Tertinggi' => $nil_min,
+    'Rata-Rata nil' => $ratnil
+    ];
 	?>
-	
     <h2 class="text-center">Daftar nilai</h2>
     <table class="table table-bordered border-primary">
         <thead class="table-dark">
@@ -37,7 +45,7 @@
                 foreach ($attr as $th) {?>
                 <th class="text-center"><?= $th ?>
 				</th>
-                <?php }?>
+                <?php } ?>
             </tr>
             </thead>
             <tbody>
@@ -76,7 +84,7 @@
                     <td><?= $pred ?></td>
                     <td><?= $ternary ?></td>
                 </tr>
-                <?php} ?>
+                <?php } ?>
             </tbody>
             <tfoot>
                 <?php
@@ -91,6 +99,6 @@
                 <?php } ?>
             </tfoot>
         </table>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
   </body>
 </html>
